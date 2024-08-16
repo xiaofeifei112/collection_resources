@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "author": "qiulingfei <1312483554@qq.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "antd": "^5.20.1",
+    "umi": "^4.3.12"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@umijs/plugins": "^4.3.12",
+    "sass": "^1.77.8",
+    "typescript": "^5.0.3"
+  }
+}
