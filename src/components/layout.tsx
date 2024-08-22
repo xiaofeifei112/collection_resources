@@ -2,7 +2,7 @@ import React from 'react';
 import {LaptopOutlined, NotificationOutlined, UserOutlined} from '@ant-design/icons';
 import type {MenuProps} from 'antd';
 import {Layout, Menu} from 'antd';
-import {Outlet} from 'umi';
+import {Outlet, useNavigate} from 'umi';
 import styles from './styles.module.scss';
 
 
@@ -35,12 +35,16 @@ const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOu
 // 菜单
 const menus: MenuProps['items'] = [
     {
-        key: 'user', label: '角色'
+        key: 'user', label: '角色',
+        children: [
+            {key: '/role', label: '属性'},
+            {key: '/warehouse', label: '仓库'}
+        ]
     },
     {
-        key: 'skill', label: '生活技能',
+        key: 'skill', label: '资源',
         children: [
-            {label: '木材', key: 'Logging'},
+            {label: '探索', key: '/explore'},
             {label: '挖矿', key: 'Mining'},
             {label: '狩猎', key: 'Hunting'},
             {label: '药剂', key: 'Potion'},
@@ -50,14 +54,21 @@ const menus: MenuProps['items'] = [
     },
     {
         key: 'combat', label: '战斗',
-        children: []
+        children: [
+            {label: '历练', key: 'experience'},
+            {label: '秘境', key: 'secretRealm'},
+            {label: '大陆', key: 'continent'},
+            {label: '小世界', key: 'world'},
+            {label: '界域', key: 'boundary'},
+        ]
     },
     {
-        key: 'shop', label: "购物"
+        key: 'shop', label: "商城"
     }
 ]
 
 const App: React.FC = () => {
+    const navigation = useNavigate();
 
     return (
         <Layout className={styles.layout}>
@@ -71,7 +82,7 @@ const App: React.FC = () => {
                 {/*    style={{ flex: 1, minWidth: 0 }}*/}
                 {/*/>*/}
             </Header>
-            <Layout>
+            <Layout style={{overflow: 'auto'}}>
                 <Sider width={200}>
                     <Menu
                         mode="inline"
@@ -79,14 +90,17 @@ const App: React.FC = () => {
                         defaultOpenKeys={['sub1']}
                         style={{height: '100%', borderRight: 0}}
                         items={menus}
+                        onClick={({key}) => {
+                            navigation(key)
+                        }}
                     />
                 </Sider>
-                <Layout style={{padding: '0 24px 24px'}}>
+                <Layout>
                     <Content
                         style={{
                             padding: "12 0",
                             margin: 0,
-                            minHeight: 280,
+                            minHeight: 280
                         }}
                     >
                         {<Outlet/>}

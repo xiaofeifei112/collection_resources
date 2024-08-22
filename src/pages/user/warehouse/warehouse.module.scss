@@ -1,0 +1,53 @@
+.box{
+    height: 100%;
+    padding: 0 0 0 10px;
+    min-width: 1240px;
+    overflow-x: auto;
+    display: flex;
+    justify-content: space-between;
+    .property{
+        width: 820px;
+        .header {
+            width: 96%;
+            margin: 0 auto;
+
+            :global(.ant-tabs-nav) {
+                margin: 0;
+            }
+        }
+
+        .body {
+            border-radius: 8px;
+            background-color: #fff;
+            overflow-y: auto;
+            height: calc(100% - 40px);
+
+            .plaid {
+                width: 88px;
+                height: 88px;
+                padding: 4px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+
+                > .plaid_card {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    border: 1px solid #dedede;
+                    transition: all .3s;
+
+                    &:hover {
+                        box-shadow: 1px 1px 8px 1px rgb(222, 222, 222);
+                    }
+                }
+            }
+        }
+    }
+
+    > .backpack {
+        display: flex;
+        width: 400px;
+    }
+}

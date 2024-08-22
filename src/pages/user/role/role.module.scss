@@ -1,0 +1,155 @@
+.box {
+    height: 100%;
+    min-width: 1200px;
+    overflow-x: auto;
+    display: flex;
+    justify-content: space-between;
+    > .property {
+        padding: 20px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: auto;
+        width: 820px;
+    }
+
+    > .backpack {
+        display: flex;
+        width: 400px;
+    }
+}
+
+.boxCart {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 0 12px 0;
+
+    .cart_head {
+        text-align: center;
+        position: relative;
+        line-height: 26px;
+
+        &::after, &::before {
+            content: " ";
+            display: block;
+            border-bottom: 0.5px solid #ccc;
+            width: 30%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            left: 0
+        }
+
+        &::before {
+            right: 0
+        }
+    }
+
+
+    .cart_body {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: calc(100% - 26px);
+        align-items: center;
+    }
+}
+
+.plaid {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    border: 1px dashed #ccc;
+    cursor: pointer;
+    transition: all .3s;
+    text-align: center;
+
+    > span {
+        color: #dcdcdc;
+        font-size: 20px;
+        line-height: 80px;
+    }
+}
+
+.plaid:hover {
+    box-shadow: 1px 1px 8px 1px rgb(222, 222, 222);
+}
+
+// 装备
+.equipment {
+    width: 340px;
+    height: 600px;
+}
+
+// 用户属性
+.userProps {
+    width: 340px;
+    height: 600px;
+    margin-left: 40px;
+
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 0 12px 0;
+
+    .cart_head {
+        text-align: center;
+        position: relative;
+        line-height: 26px;
+
+        &::after, &::before {
+            content: " ";
+            display: block;
+            border-bottom: 0.5px solid #ccc;
+            width: 30%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            left: 0
+        }
+
+        &::before {
+            right: 0
+        }
+    }
+}
+
+.cart_info {
+    padding: 4px 10px;
+
+    .props {
+        display: flex;
+        justify-content: space-between;
+
+        > span {
+            line-height: 26px;
+            font-size: 14px;
+        }
+
+        > span:first-child {
+            color: #939393;
+        }
+
+        > span:last-child {
+            color: #1677ff;
+        }
+    }
+}
+.backpack{
+    background-color: #fff;
+}
+.lifePrep{
+    width: 340px;
+    height: 300px;
+    margin-top: 20px;
+}
+.deputy{
+    width: 340px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
