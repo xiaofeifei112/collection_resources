@@ -7,7 +7,7 @@ const forest = [
 export enum CurrentStatusEnum {
     // 资源地图
     explore = "explore",
-    // 迷雾森林
+    // 森林
     forest = "forest"
 }
 
@@ -56,7 +56,7 @@ export enum ResourceEnum {
 
 // 地图
 class Resources {
-    // 迷雾森林
+    // 森林
     forest: Resource_Map[] = [
         {
             name: "贫瘠小林", img: "/assets/img.png",

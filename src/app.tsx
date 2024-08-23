@@ -1,6 +1,7 @@
 import React from "react";
 import {ConfigProvider} from 'antd'
 import locale from 'antd/es/locale/zh_CN'
+import {game_core} from "@/pages/user/role/game_core";
 
 
 // 权限处理
@@ -29,5 +30,6 @@ const ThemeProvider = (props: any) => {
 }
 
 export function rootContainer(container: any, args: any) {
+    game_core.init();
     return React.createElement(ThemeProvider, args, container);
 }
