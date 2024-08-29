@@ -17,7 +17,7 @@ const LoggingPage = () => {
     const store = useStore()
     console.log(state)
     useEffect(() => {
-        dispatch({type: 'role/start'})
+        // dispatch({type: 'role/start'})
     }, []);
 
     return <div className={styles.box}>
@@ -27,7 +27,9 @@ const LoggingPage = () => {
             </div>
             <div className={styles.body}>
                 <div className={styles.plaid}>
-                    <div className={styles.plaid_card}></div>
+                    <div className={styles.plaid_card}>
+                        {/*<img src="../../../assets/img.png" alt=""/>*/}
+                    </div>
                 </div>
                 <div className={styles.plaid}>
                     <div className={styles.plaid_card}></div>

@@ -73,8 +73,7 @@ class Game_core {
                 fl = false;
             }
         }
-        console.log(this.userWarehouse)
-        fl && this.userWarehouse.push(back);
+        fl && this.userWarehouse.push({...back});
     }
 }
 

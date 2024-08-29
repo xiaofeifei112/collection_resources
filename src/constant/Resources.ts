@@ -104,7 +104,25 @@ class TimerQueue {
 
     // 删除
     del(name: string) {
+        for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i].name === name) {
+                this.list.splice(i, 1);
+                return;
+            }
+        }
+    }
 
+    // 添加
+    add(name: string, time: number, func: () => Promise<any>) {
+        let fl = false
+        for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i].name === name) {
+                this.list[i].time = time;
+                this.list[i].func = func;
+                fl = true;
+            }
+        }
+        fl && this.list.push({name, time, func});
     }
 }
 

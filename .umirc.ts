@@ -14,6 +14,9 @@ export default defineConfig({
             ]
         }
     ],
+    jsMinifierOptions: {
+        target: ['chrome80', 'es2020']
+    },
     codeSplitting: {
         jsStrategy: 'granularChunks',
     },
