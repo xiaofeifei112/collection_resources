@@ -5,7 +5,7 @@ WORKDIR /opt/web
 RUN yarn config set registry https://registry.npmmirror.com && \
  yarn install --ignore-optional && yarn build
 
-FROM hub-mirror.c.163.com/library/nginx:1.17
+FROM nginx:1.17
 
 RUN addgroup appgroup --gid 1000 \
 	 && useradd appuser --uid 1000 --shell /bin/bash --group appgroup \
