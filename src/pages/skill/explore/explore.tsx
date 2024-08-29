@@ -2,7 +2,8 @@ import React, {useEffect} from 'react'
 import {Tabs, TabsProps} from 'antd'
 import {useSelector, useDispatch, useStore} from 'umi'
 import styles from './explore.module.scss'
-import EquipmentBar from "@/components/ToggleBar/Equipment"
+import ResourcesBar from "@/components/ToggleBar/ResourcesBar"
+import img from "@/assets/img.png"
 
 
 const TabItems: TabsProps["items"] = [
@@ -15,7 +16,7 @@ const LoggingPage = () => {
     const state = useSelector((state: any) => state);
     const dispatch = useDispatch()
     const store = useStore()
-    console.log(state)
+
     useEffect(() => {
         // dispatch({type: 'role/start'})
     }, []);
@@ -28,7 +29,8 @@ const LoggingPage = () => {
             <div className={styles.body}>
                 <div className={styles.plaid}>
                     <div className={styles.plaid_card}>
-                        {/*<img src="../../../assets/img.png" alt=""/>*/}
+                        <img src={img} alt=""/>
+                        <span className={styles.title}>迷雾沼泽</span>
                     </div>
                 </div>
                 <div className={styles.plaid}>
@@ -49,7 +51,7 @@ const LoggingPage = () => {
             </div>
         </div>
         <div className={styles.backpack}>
-            <EquipmentBar/>
+            <ResourcesBar title={'迷雾森林'}/>
         </div>
     </div>
 }

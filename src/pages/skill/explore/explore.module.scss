@@ -5,8 +5,10 @@
     overflow-x: auto;
     display: flex;
     justify-content: space-between;
-    .property{
+
+    .property {
         width: 820px;
+
         .header {
             width: 96%;
             margin: 0 auto;
@@ -37,9 +39,29 @@
                     cursor: pointer;
                     border: 1px solid #dedede;
                     transition: all .3s;
+                    position: relative;
 
                     &:hover {
                         box-shadow: 1px 1px 8px 1px rgb(222, 222, 222);
+                    }
+
+                    > img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 8px;
+                    }
+
+                    > .title {
+                        position: absolute;
+                        width: 100%;
+                        height: 40px;
+                        border-radius: 0 0 8px 8px;
+                        background-color: rgb(170 170 170 / 69%);
+                        line-height: 40px;
+                        text-align: center;
+                        left: 0;
+                        bottom: 0;
+                        color: #363636;
                     }
                 }
             }
