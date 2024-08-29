@@ -1,4 +1,4 @@
-FROM node:22.7-alpine3.19 as builder
+FROM node:20.11-alpine3.18 as builder
 WORKDIR /opt/web
 COPY . .
 WORKDIR /opt/web
